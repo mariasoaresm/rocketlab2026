@@ -297,9 +297,4 @@ Este projeto demonstra a evolução de um CRUD tradicional para uma solução de
 **Visagio | Rocket Lab 2026**
 Desenvolvido por **Maria Eduarda Soares Machado** 🚀
 
-```
 
-
-
-Só dizer 👍
-```
