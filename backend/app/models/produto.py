@@ -7,7 +7,7 @@ from app.database import Base
 
 
 class Produto(Base):
-    __tablename__ = "produtos"
+    __tablename__ = "dim_produtos"
 
     id_produto: Mapped[str] = mapped_column(String(32), primary_key=True)
     nome_produto: Mapped[str] = mapped_column(String(255))

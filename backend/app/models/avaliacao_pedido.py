@@ -8,11 +8,11 @@ from app.database import Base
 
 
 class AvaliacaoPedido(Base):
-    __tablename__ = "avaliacoes_pedidos"
+    __tablename__ = "fat_avaliacoes_pedidos"
 
     id_avaliacao: Mapped[str] = mapped_column(String(32), primary_key=True)
     id_pedido: Mapped[str] = mapped_column(
-        String(32), ForeignKey("pedidos.id_pedido"), nullable=False
+        String(32), ForeignKey("fat_pedidos.id_pedido"), nullable=False
     )
     avaliacao: Mapped[int] = mapped_column(Integer)
     titulo_comentario: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)

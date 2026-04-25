@@ -5,17 +5,17 @@ from app.database import Base
 
 
 class ItemPedido(Base):
-    __tablename__ = "itens_pedidos"
+    __tablename__ = "fat_itens_pedidos"
 
     id_pedido: Mapped[str] = mapped_column(
-        String(32), ForeignKey("pedidos.id_pedido"), nullable=False
+        String(32), ForeignKey("fat_pedidos.id_pedido"), nullable=False
     )
     id_item: Mapped[int] = mapped_column(Integer, nullable=False)
     id_produto: Mapped[str] = mapped_column(
-        String(32), ForeignKey("produtos.id_produto"), nullable=False
+        String(32), ForeignKey("dim_produtos.id_produto"), nullable=False
     )
     id_vendedor: Mapped[str] = mapped_column(
-        String(32), ForeignKey("vendedores.id_vendedor"), nullable=False
+        String(32), ForeignKey("dim_vendedores.id_vendedor"), nullable=False
     )
     preco_BRL: Mapped[float] = mapped_column(Float)
     preco_frete: Mapped[float] = mapped_column(Float)

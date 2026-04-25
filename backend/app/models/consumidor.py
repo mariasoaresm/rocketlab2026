@@ -5,7 +5,7 @@ from app.database import Base
 
 
 class Consumidor(Base):
-    __tablename__ = "consumidores"
+    __tablename__ = "dim_consumidores"
 
     id_consumidor: Mapped[str] = mapped_column(String(32), primary_key=True)
     prefixo_cep: Mapped[str] = mapped_column(String(10))

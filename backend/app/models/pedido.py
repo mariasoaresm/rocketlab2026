@@ -8,11 +8,11 @@ from app.database import Base
 
 
 class Pedido(Base):
-    __tablename__ = "pedidos"
+    __tablename__ = "fat_pedidos"
 
     id_pedido: Mapped[str] = mapped_column(String(32), primary_key=True)
     id_consumidor: Mapped[str] = mapped_column(
-        String(32), ForeignKey("consumidores.id_consumidor"), nullable=False
+        String(32), ForeignKey("dim_consumidores.id_consumidor"), nullable=False
     )
     status: Mapped[str] = mapped_column(String(50))
     pedido_compra_timestamp: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
