@@ -44,7 +44,7 @@ def _create_agent_executor(model_name: str):
     agent_executor = create_sql_agent(
         llm,
         db=db,
-        agent_type="tool-calling",
+        agent_type="openai-tools",
         verbose=False
     )
     
@@ -98,11 +98,3 @@ async def ask_with_model_fallback(question: str):
     raise RuntimeError(f"Todos os modelos falharam. Detalhes: {joined_errors}")
 
 
-# Inicializa o agent executor na importação do módulo
-try:
-    agent_executor = _get_agent_executor(settings.GOOGLE_MODEL)
-except Exception as e:
-    raise RuntimeError(
-        f"Falha ao inicializar o agente: {str(e)}. "
-        f"Verifique a configuração do banco de dados e da API do Gemini."
-    )
