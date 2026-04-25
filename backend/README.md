@@ -23,6 +23,12 @@ Windows:
 venv\Scripts\activate
 ```
 
+Se você já estiver dentro da pasta `backend`, use:
+
+```bash
+..\venv\Scripts\activate
+```
+
 Mac/Linux:
 ```bash
 source venv/bin/activate
@@ -58,6 +64,14 @@ Este comando lê os arquivos dentro de `alembic/versions/` e cria todas as tabel
 
 ```bash
 alembic current
+```
+
+### Popular o banco com os CSVs
+
+Com o ambiente virtual ativo, execute a partir da pasta `backend`:
+
+```bash
+python seed.py
 ```
 
 ### Criar uma nova migration (após alterar um model)
